@@ -8,6 +8,7 @@
       "@/*": ["*"],
       "@layouts/*": ["./src/layouts/*"],
       "@drizzle/*": ["./src/drizzle/*"],
+      "@src/*": ["./src/*"],
     }
   },
 }
