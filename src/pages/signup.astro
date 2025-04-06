@@ -33,13 +33,17 @@ if (Astro.request.method === 'POST') {
         'Set-Cookie': cookies,
       },
     })
-  } catch (error: any) {
-    if (error.body.code) {
-      error_message = error.body.message
-      console.log(error_message)
-    }
+
+} catch (error: any) {
+  if (error?.body?.code) {
+    error_message = error.body.message
+    console.log(error_message)
+  } else {
+    error_message = 'An unexpected error occurred during sign up.'
+    console.error('Unexpected error:', error)
   }
 }
+
 
 if (Astro.locals.user) {
   return Astro.redirect('/app')
